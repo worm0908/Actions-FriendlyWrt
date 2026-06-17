@@ -36,6 +36,7 @@ jobs:
       matrix:
         VERSION: ['25.12']
         SET: [docker]
+        CPU: ['rk3576']
 
     steps:
     - name: Checkout
