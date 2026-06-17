@@ -1,4 +1,15 @@
 #!/bin/bash
+# {{ Add luci-app-vlscmd
+(cd friendlywrt && {
+    mkdir -p package/luci-app-diskman
+    git clone https://github.com/cokebar/openwrt-vlmcsd.git package/openwrt-vlmcsd
+    git clone https://github.com/cokebar/luci-app-vlmcsd.git package/luci-app-vlmcsd
+})
+cat >> configs/rockchip/01-nanopi <<EOL
+CONFIG_PACKAGE_luci-app-vlmcsd=y
+CONFIG_PACKAGE_vlmcsd=y
+EOL
+# }}
 
 # {{ Add luci-app-diskman
 (cd friendlywrt && {
