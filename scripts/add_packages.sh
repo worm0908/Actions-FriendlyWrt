@@ -1,7 +1,6 @@
 #!/bin/bash
 # {{ Add luci-app-vlscmd
 (cd friendlywrt && {
-    mkdir -p package/luci-app-diskman
     git clone https://github.com/cokebar/openwrt-vlmcsd.git package/openwrt-vlmcsd
     git clone https://github.com/cokebar/luci-app-vlmcsd.git package/luci-app-vlmcsd
 })
@@ -19,26 +18,6 @@ if [ -f friendlywrt/feeds.conf.default ] \
     IS_OPENWRT_25=1
 fi
 echo "add_packages.sh: IS_OPENWRT_25=${IS_OPENWRT_25}"
-
-# {{ Add luci-app-diskman
-(cd friendlywrt && {
-    mkdir -p package/luci-app-diskman
-    if [ "${IS_OPENWRT_25}" = "1" ]; then
-        wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/applications/luci-app-diskman/Makefile -O package/luci-app-diskman/Makefile
-    else
-        wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/applications/luci-app-diskman/Makefile.old -O package/luci-app-diskman/Makefile
-    fi
-    mkdir -p package/parted
-    wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/Parted.Makefile -O package/parted/Makefile
-})
-cat >> configs/rockchip/01-nanopi <<EOL
-CONFIG_PACKAGE_luci-app-diskman=y
-CONFIG_PACKAGE_luci-app-diskman_INCLUDE_btrfs_progs=y
-CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk=y
-CONFIG_PACKAGE_luci-i18n-diskman-zh-cn=y
-CONFIG_PACKAGE_smartmontools=y
-EOL
-# }}
 
 # {{ Add luci-theme-argon
 (cd friendlywrt/package && {
