@@ -1,6 +1,8 @@
 #!/bin/bash
 # {{ Add luci-app-vlscmd
 (cd friendlywrt && {
+    rm -rf package/openwrt-vlmcsd
+    rm -rf package/luci-app-vlmcsd
     git clone https://github.com/cokebar/openwrt-vlmcsd.git package/openwrt-vlmcsd
     git clone https://github.com/cokebar/luci-app-vlmcsd.git package/luci-app-vlmcsd
 })
