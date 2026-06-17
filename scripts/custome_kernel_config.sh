@@ -3,6 +3,7 @@
 CONFIGS=(
   "CONFIG_NET_ACT_CT=m"
   "CONFIG_NET_ACT_CTINFO=m"
+  "CONFIG_KERNEL_DEBUG_INFO_BTF=y"
 )
 
 source .current_config.mk
