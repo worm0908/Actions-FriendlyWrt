@@ -3,7 +3,7 @@
 (cd friendlywrt && {
     rm -rf package/openwrt-vlmcsd
     rm -rf package/luci-app-vlmcsd
-    git clone https://github.com/cokebar/openwrt-vlmcsd.git package/openwrt-vlmcsd
+    git clone https://github.com/worm0908/openwrt-vlmcsd.git package/openwrt-vlmcsd
     git clone https://github.com/cokebar/luci-app-vlmcsd.git package/luci-app-vlmcsd
 })
 cat >> configs/rockchip/01-nanopi <<EOL
