@@ -6,7 +6,7 @@
 # =============================================
 
 # 定义 dae 必需的配置项
-DAE_CONFIGS=(
+CONFIGS=(
     # 基础 eBPF 支持
     "CONFIG_BPF=y"
     "CONFIG_BPF_SYSCALL=y"
@@ -36,9 +36,6 @@ DAE_CONFIGS=(
     "CONFIG_NET_ACT_CTINFO=m"
 )
 
-# 合并所有配置
-ALL_CONFIGS=("${DAE_CONFIGS[@]}" "${CUSTOM_CONFIGS[@]}")
-
 # 获取当前内核配置文件路径
 source .current_config.mk
 KCFG="kernel/arch/arm64/configs/$(awk '{print $1}' <<< "$TARGET_KERNEL_CONFIG")"
@@ -46,7 +43,7 @@ KCFG="kernel/arch/arm64/configs/$(awk '{print $1}' <<< "$TARGET_KERNEL_CONFIG")"
 echo "正在为 dae 支持修改内核配置: $KCFG"
 
 # 遍历并应用所有配置
-for CFG in "${ALL_CONFIGS[@]}"; do
+for CFG in "${CONFIGS[@]}"; do
     KEY="${CFG%%=*}"
     
     # 处理特殊格式: "# CONFIG_XXX is not set"
