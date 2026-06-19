@@ -9,6 +9,11 @@ echo "CONFIG_LUCI_LANG_zh_Hans=y" > configs/rockchip/02-luci_lang
 
 # Disable app
 sed -i \
+-e 's/^CONFIG_PACKAGE_luci-app-adblock=y/# CONFIG_PACKAGE_luci-app-adblock is not set/' \
+-e 's/^CONFIG_PACKAGE_adblock=y/# CONFIG_PACKAGE_adblock is not set/' \
+-e 's/^CONFIG_PACKAGE_luci-app-aria2=y/# CONFIG_PACKAGE_luci-app-aria2 is not set/' \
+-e 's/^CONFIG_PACKAGE_aria2=y/# CONFIG_PACKAGE_aria2 is not set/' \
+-e 's/^CONFIG_PACKAGE_aria2-openssl=y/# CONFIG_PACKAGE_aria2-openssl is not set/' \
 -e 's/^CONFIG_PACKAGE_luci-app-commands=y/# CONFIG_PACKAGE_luci-app-commands is not set/' \
 -e 's/^CONFIG_PACKAGE_luci-app-ddns=y/# CONFIG_PACKAGE_luci-app-ddns is not set/' \
 -e 's/^CONFIG_PACKAGE_ddns-scripts=y/# CONFIG_PACKAGE_ddns-scripts is not set/' \
