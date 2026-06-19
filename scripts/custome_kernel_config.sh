@@ -30,10 +30,8 @@ DAE_CONFIGS=(
     "CONFIG_DEBUG_INFO=y"
     "CONFIG_DEBUG_INFO_BTF=y"
     "# CONFIG_DEBUG_INFO_REDUCED is not set"   # 必须显式禁用
-)
 
-# 你原有的额外配置（可保留）
-CUSTOM_CONFIGS=(
+    # 原有的额外配置
     "CONFIG_NET_ACT_CT=m"
     "CONFIG_NET_ACT_CTINFO=m"
 )
