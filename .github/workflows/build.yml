@@ -321,6 +321,7 @@ jobs:
         tar xzf "../rootfs-friendlywrt-${{ matrix.VERSION }}${SUFFIX}.tgz"
 
     - name: Unpack host package-manager bundle
+      if: matrix.SET == 'non-docker'
       run: |
         cd project
         tar xzf "../host-pm-${{ matrix.VERSION }}.tgz"
