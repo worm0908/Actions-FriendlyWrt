@@ -32,8 +32,8 @@ CONFIGS=(
     "# CONFIG_DEBUG_INFO_REDUCED is not set"   # 必须显式禁用
 
     # 原有的额外配置
-    "CONFIG_NET_ACT_CT=y"
-    "CONFIG_NET_ACT_CTINFO=y"
+    "CONFIG_NET_ACT_CT=m"
+    "CONFIG_NET_ACT_CTINFO=m"
 )
 
 # 获取当前内核配置文件路径
