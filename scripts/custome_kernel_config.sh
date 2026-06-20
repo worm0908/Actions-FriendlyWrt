@@ -40,7 +40,7 @@ CONFIGS=(
 source .current_config.mk
 KCFG="kernel/arch/arm64/configs/$(awk '{print $1}' <<< "$TARGET_KERNEL_CONFIG")"
 
-echo "正在为 dae 支持修改内核配置: $KCFG"
+echo "应用内核参数定制: $KCFG"
 
 # 遍历并应用所有配置
 for CFG in "${CONFIGS[@]}"; do
