@@ -22,8 +22,8 @@ CONFIGS=(
     # 网络包处理 (Traffic Control)
     "CONFIG_NET_INGRESS=y"
     "CONFIG_NET_EGRESS=y"
-    "CONFIG_NET_SCH_INGRESS=m"
-    "CONFIG_NET_CLS_BPF=m"
+    "CONFIG_NET_SCH_INGRESS=y"
+    "CONFIG_NET_CLS_BPF=y"
     "CONFIG_NET_CLS_ACT=y"
     
     # BTF 支持 (CO-RE 加载 eBPF 程序必需)
@@ -32,8 +32,8 @@ CONFIGS=(
     "# CONFIG_DEBUG_INFO_REDUCED is not set"   # 必须显式禁用
 
     # 原有的额外配置
-    "CONFIG_NET_ACT_CT=m"
-    "CONFIG_NET_ACT_CTINFO=m"
+    "CONFIG_NET_ACT_CT=y"
+    "CONFIG_NET_ACT_CTINFO=y"
 )
 
 # 获取当前内核配置文件路径
