@@ -12,16 +12,6 @@ CONFIG_PACKAGE_vlmcsd=y
 EOL
 # }}
 
-# {{ Add vmlinux-btf
-(cd friendlywrt && {
-    rm -rf package/vmlinux-btf
-    git clone https://github.com/QiuSimons/vmlinux-btf.git package/vmlinux-btf
-})
-cat >> configs/rockchip/01-nanopi <<EOL
-CONFIG_PACKAGE_vmlinux-btf=y
-EOL
-# }}
-
 # Detect whether this is OpenWrt 25+ by probing feeds.conf.default for the
 # "video" feed line, which only ships in OpenWrt 25+.
 IS_OPENWRT_25=0
