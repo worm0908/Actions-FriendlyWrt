@@ -342,6 +342,8 @@ jobs:
         #     ;;
         # esac
 
+        ../scripts/3rd/add_vmlinux_btf.sh
+
     - name: Build sd image
       id: build_sd_image
       run: |
