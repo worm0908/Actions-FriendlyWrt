@@ -1,5 +1,7 @@
 name: Build FriendlyWrt
-
+permissions:
+  contents: write
+  packages: read
 on:
   workflow_dispatch:
 jobs:
