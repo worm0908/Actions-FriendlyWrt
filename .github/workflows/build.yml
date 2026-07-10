@@ -1,4 +1,5 @@
 name: Build FriendlyWrt
+
 permissions:
   contents: write
   packages: read
